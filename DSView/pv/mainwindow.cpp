@@ -105,6 +105,10 @@
 #include <thread>
 #include "ui/uimanager.h"
 
+#ifdef _WIN32
+#include <windows.h>
+#endif
+
 namespace pv
 {
 
@@ -1277,14 +1281,14 @@ namespace pv
 
             case Qt::Key_Left:
 #ifdef _WIN32
-            case 37:
+            case VK_LEFT:
 #endif
                 _view->set_scale_offset(_view->scale(),
                                         _view->offset() - ( _view->get_view_width() / 8 ));
                 break;
             case Qt::Key_Right:
 #ifdef _WIN32
-            case 39:
+            case VK_RIGHT:
 #endif
                 _view->set_scale_offset(_view->scale(),
                                         _view->offset() + ( _view->get_view_width() / 8 ));
@@ -1293,14 +1297,14 @@ namespace pv
 
             case Qt::Key_Up:
 #ifdef _WIN32
-            case 38:
+            case VK_UP:
 #endif
                 _view->zoom(1);
                 break;
 
             case Qt::Key_Down:
 #ifdef _WIN32
-            case 40:
+            case VK_DOWN:
 #endif
                 _view->zoom(-1);
                 break;
@@ -1339,7 +1343,7 @@ namespace pv
 
             case Qt::Key_PageUp:
 #ifdef _WIN32
-            case 33:
+            case VK_PRIOR:
 #endif
                 for (auto s : sigs)
                 {
@@ -1357,7 +1361,7 @@ namespace pv
 
             case Qt::Key_PageDown:
 #ifdef _WIN32
-            case 34:
+            case VK_NEXT:
 #endif
                 for (auto s : sigs)
                 {
