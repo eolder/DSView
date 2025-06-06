@@ -3,6 +3,14 @@
 # eolder/DSView
 This fork contains some small modifications that make the program feel more similar to a certain popular/alternative tool.
 
+## Building / Installing
+Clone the repo and run
+```
+cmake .
+make -j20
+sudo make install
+```
+
 # DSView 
 DSView is a GUI program for supporting various instruments from [DreamSourceLab](http://www.dreamsourcelab.com), including logic analyzers, oscilloscopes, etc. DSView is based on the [sigrok project](https://sigrok.org).
 
