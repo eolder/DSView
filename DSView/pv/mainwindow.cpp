@@ -1280,14 +1280,14 @@ namespace pv
             case 33:
 #endif
                 _view->set_scale_offset(_view->scale(),
-                                        _view->offset() - _view->get_view_width());
+                                        _view->offset() - ( _view->get_view_width() / 8 ));
                 break;
             case Qt::Key_PageDown:
 #ifdef _WIN32
             case 34:
 #endif
                 _view->set_scale_offset(_view->scale(),
-                                        _view->offset() + _view->get_view_width());
+                                        _view->offset() + ( _view->get_view_width() / 8 ));
 
                 break;
 
