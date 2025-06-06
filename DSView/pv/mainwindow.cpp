@@ -1275,32 +1275,32 @@ namespace pv
                 _sampling_bar->config_device();
                 break;
 
-            case Qt::Key_PageUp:
+            case Qt::Key_Left:
 #ifdef _WIN32
-            case 33:
+            case 37:
 #endif
                 _view->set_scale_offset(_view->scale(),
                                         _view->offset() - ( _view->get_view_width() / 8 ));
                 break;
-            case Qt::Key_PageDown:
+            case Qt::Key_Right:
 #ifdef _WIN32
-            case 34:
+            case 39:
 #endif
                 _view->set_scale_offset(_view->scale(),
                                         _view->offset() + ( _view->get_view_width() / 8 ));
 
                 break;
 
-            case Qt::Key_Left:
+            case Qt::Key_Up:
 #ifdef _WIN32
-            case 37:
+            case 38:
 #endif
                 _view->zoom(1);
                 break;
 
-            case Qt::Key_Right:
+            case Qt::Key_Down:
 #ifdef _WIN32
-            case 39:
+            case 40:
 #endif
                 _view->zoom(-1);
                 break;
@@ -1337,9 +1337,9 @@ namespace pv
                 update();
                 break;
 
-            case Qt::Key_Up: 
+            case Qt::Key_PageUp:
 #ifdef _WIN32
-            case 38:
+            case 33:
 #endif
                 for (auto s : sigs)
                 {
@@ -1355,9 +1355,9 @@ namespace pv
                 }
                 break;
 
-            case Qt::Key_Down:
+            case Qt::Key_PageDown:
 #ifdef _WIN32
-            case 40:
+            case 34:
 #endif
                 for (auto s : sigs)
                 {
